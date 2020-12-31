@@ -6,7 +6,8 @@ public class PassWord {
 	private static Scanner input;
 	//String passWordRegex = "^[A-Za-z0-9]{8,}$"; Rule 1
 	//String passWordRegex = "^(?=.*[A-Z])[a-zA-Z0-9]{8,}$";
-	String passWordRegex = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$";
+	//String passWordRegex = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$";
+	String passWordRegex = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!_%*#?&]{1})[a-zA-Z0-9@$!_%*#?&]{8,}$";
 	public void validatePassWord() 
 	{	
 		input = new Scanner(System.in);
