@@ -1,6 +1,5 @@
 package userRegistration;
 
-import java.util.Scanner;
 
 public class UserRegistration 
 {
@@ -9,6 +8,7 @@ public class UserRegistration
 		System.out.println("Validation of user entries in UserRegistration");
 		Validation reg=new Validation(); 
 		reg.validateFirstname();
+		reg.validateLastname();
 	}
 	
 }
