@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MobileNumber 
 {
 	private static Scanner input;
-	String phoneRegex = "^[0-9]{2}\s[0-9]{10}$";
+	String phoneRegex = "^[0-9]{2}\s[1-9]{1}[0-9]{9}$";
 	
 	public void validateMobile() 
 	{	
@@ -18,7 +18,7 @@ public class MobileNumber
 			if (mobileNumber.matches(phoneRegex)) 
 			{
 				i=1;
-				System.out.println(mobileNumber+" is Mobile Number");
+				System.out.println(mobileNumber+" is valid Mobile Number");
 			}
 			else  
 			{

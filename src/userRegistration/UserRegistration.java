@@ -9,10 +9,12 @@ public class UserRegistration
 		Validation reg=new Validation(); 
 		EmailVaildation checkEmail = new EmailVaildation();
 		MobileNumber checkMobile = new MobileNumber();
+		PassWord checkPassWord = new PassWord();
 		reg.validateFirstname();
 		reg.validateLastname();
 		checkEmail.validateEmail();
 		checkMobile.validateMobile();
+		checkPassWord.validatePassWord();
 	}
 	
 }
