@@ -21,7 +21,11 @@ public class UserRegistrationGradle
     {
         Pattern emailRegex = Pattern.compile("^([a-zA-Z0-9]+)([_+.-]{1}[a-z0-9]+)*@([A-Za-z0-9]+).([a-z]{2,4})((.[a-z]{2,3})?)$");
         Matcher emailMatch = emailRegex.matcher(email);
-        return emailMatch.matches();
+	boolean result = emailMatch.matches();
+        if (result)
+            return true;
+        else
+            return false;        
     }
     boolean password(String password)
     {
