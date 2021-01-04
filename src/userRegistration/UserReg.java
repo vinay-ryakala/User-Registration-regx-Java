@@ -2,7 +2,7 @@ package userRegistration;
 
 import java.util.Scanner;
 
-public class Validation 
+public class UserReg 
 {
 	private static Scanner input;
 	String nameRegex = "^[A-Z]{1}[A-Za-z]{2,}$";

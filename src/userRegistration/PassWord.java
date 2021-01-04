@@ -2,6 +2,7 @@ package userRegistration;
 
 import java.util.Scanner;
 
+
 public class PassWord {
 	private static Scanner input;
 	//String passWordRegex = "^[A-Za-z0-9]{8,}$"; Rule 1
