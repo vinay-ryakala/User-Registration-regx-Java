@@ -5,16 +5,23 @@ import org.junit.Test;
 
 public class UserRegistrationGradleTest {
     @Test
-    public void testFirstName() {
-        try {
-            try {
+    public void testFirstName()
+    {
+        try
+        {
+            try
+            {
                 UserRegistrationGradle add = new UserRegistrationGradle();
-                boolean output = add.checkName(null);
+                boolean output = add.checkName("Vinay");
                 Assert.assertTrue(output);
-            } catch (NullPointerException e) {
+            } catch (NullPointerException e)
+            {
                 e.printStackTrace();
             }
-        } catch (InvalidInputException e) {
+        }
+        catch (InvalidInputException e)
+
+        {
             e.printStackTrace();
         }
     }
@@ -22,8 +29,10 @@ public class UserRegistrationGradleTest {
     @Test
     public void testLastName()
     {
-        try {
-            try {
+        try
+        {
+            try
+            {
                 UserRegistrationGradle lastName = new UserRegistrationGradle();
                 boolean output = lastName.checkName("Rajahs");
                 Assert.assertTrue(output);

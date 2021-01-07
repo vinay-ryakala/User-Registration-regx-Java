@@ -1,5 +1,6 @@
 package com.gradle;
 
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,11 +8,8 @@ public class UserRegistrationGradle
 {
     boolean checkName(String name)throws InvalidInputException
     {
-
-        Pattern nameRegex = Pattern.compile("^[A-Z]{1}[A-Za-z]{2,12}$");
-        Matcher nameMatch = nameRegex.matcher(name);
-        boolean result = nameMatch.matches();
-        if (result)
+        Predicate<String> matcher = n ->(n.matches("^[A-Z]{1}[A-Za-z]{2,12}$"));
+        if (matcher.test(name))
             return true;
         else
             throw new InvalidInputException("plz enter name with First Letter Capital ");
@@ -19,9 +17,8 @@ public class UserRegistrationGradle
     }
     boolean mobileNumber(String number) throws InvalidInputException
     {
-        Pattern numberRegex = Pattern.compile("^[0-9]{2}\s[1-9]{1}[0-9]{9}$");
-        Matcher numberMatch = numberRegex.matcher(number);
-        boolean result = numberMatch.matches();
+        Predicate<String> matcher = n ->(n.matches("^[0-9]{2}\s[1-9]{1}[0-9]{9}$"));
+        boolean result=matcher.test(number);
         if (result)
             return true;
         else
@@ -29,9 +26,8 @@ public class UserRegistrationGradle
     }
     boolean email(String email)throws InvalidInputException
     {
-        Pattern emailRegex = Pattern.compile("^([a-zA-Z0-9]+)([_+.-]{1}[a-z0-9]+)*@([A-Za-z0-9]+).([a-z]{2,4})((.[a-z]{2,3})?)$");
-        Matcher emailMatch = emailRegex.matcher(email);
-        boolean result = emailMatch.matches();
+       Predicate<String> matcher = n ->(n.matches("^([a-zA-Z0-9]+)([_+.-]{1}[a-z0-9]+)*@([A-Za-z0-9]+).([a-z]{2,4})((.[a-z]{2,3})?)$"));
+        boolean result=matcher.test(email);
         if (result)
             return true;
         else
@@ -39,9 +35,8 @@ public class UserRegistrationGradle
     }
     boolean password(String password)throws InvalidInputException
     {
-        Pattern passwordRegex = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!_%*#?&]{1})[a-zA-Z0-9@$!_%*#?&]{8,}$");
-        Matcher passwordMatch = passwordRegex.matcher(password);
-        boolean result = passwordMatch.matches();
+        Predicate<String> matcher = n ->(n.matches("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!_%*#?&]{1})[a-zA-Z0-9@$!_%*#?&]{8,}$"));
+        boolean result=matcher.test(password);
         if (result)
             return true;
         else
